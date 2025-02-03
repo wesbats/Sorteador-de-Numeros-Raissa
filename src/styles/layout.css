@@ -1,0 +1,77 @@
+#header {
+  text-align: center;
+}
+
+main {
+  & #main-header {
+    margin-top: 4.2rem;
+    height: fit-content;
+  }
+
+  & #to-draw-container {
+    margin-block: 4.2rem 8rem;
+    & .to-draw-header p {
+      margin-bottom: 0.2rem;
+      font-size: 1.4rem;
+    }
+
+    & .drawer-container {
+      margin-block: 4rem;
+
+      & .button-repeat-container {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  & #result-container {
+    margin-block: 7rem;
+
+    & header {
+      gap: 0.4rem;
+    }
+  }
+}
+
+@media (width >= 1080px) {
+  #header {
+    text-align: start;
+  }
+
+  main {
+    grid-template-areas:
+      "header to-draw-and-result-container"
+      "how-does-it-work to-draw-and-result-container";
+
+    margin-top: 8.9rem;
+    column-gap: 10%;
+
+    & .how-does-it-work-container {
+      grid-area: how-does-it-work;
+      margin-top: 3.8rem;
+    }
+
+    & #to-draw-container,
+    & #result-container {
+      grid-area: to-draw-and-result-container;
+    }
+
+    & #main-header {
+      grid-area: header;
+
+      margin: 0;
+      gap: 1.2rem;
+    }
+
+    & #to-draw-container {
+      margin: 0;
+      & .to-draw-header p {
+        font-size: 1.6rem;
+      }
+    }
+
+    & #result-container {
+      margin: 0;
+    }
+  }
+}

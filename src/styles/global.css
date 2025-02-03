@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sora:wght@100..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --webkit-font-smoothing: grayscale;
+  --moz-osx-font-smoothing: antialiased;
+}
+
+:root {
+  /* COLORS */
+  /* Contents */
+  --content-primary: #ffffff;
+  --content-secondary: #c7c9cc;
+  --content-tertiary: #d9d9d9;
+  --content-brand: #c58de7;
+  --color-inverse: #030203;
+
+  /* Brackgrounds */
+  --background-primary: #020202;
+  --background-secondary: #111012;
+  --background-tertiary: #24222e;
+  --background-brand: #c58de7;
+  --background-gray: #3d3d3d;
+
+  /* Gradients */
+  --gradient-border: linear-gradient(
+    90deg,
+    #77c0af 0%,
+    #d1dc97 14.84%,
+    #e9a9b3 32.15%,
+    #d586e0 65.79%,
+    #91a1fa 84.58%
+  );
+  --gradient-background: linear-gradient(#d586e0 0%, #91a1fa 98.93%);
+  --gradient-content: linear-gradient(45deg, #c7c9cc 70%, #3d3d3d 100%);
+
+  /* FONTS */
+  font-size: 62.5%;
+
+  --ff-sora: "Sora", "system-ui", "sans-serif";
+  --ff-roboto-mono: "Roboto Mono", "system-ui", "sans-serif";
+  --ff-roboto-flex: "Roboto Flex", "system-ui", "sans-serif";
+
+  /* OTHERS */
+  --pd-x: 3.6rem;
+  --pd-y: 4.4rem;
+}
+
+.container {
+  --max-width: 390px;
+  width: min(var(--max-width), 100% - var(--pd-x) * 2);
+  margin-inline: auto;
+}
+
+body {
+  padding-block: var(--pd-y);
+
+  font: 500 1.4rem var(--ff-roboto-flex);
+
+  background: var(--background-primary) url("../assets/background.png");
+  color: var(--content-secondary);
+}
+
+h1,
+h2 {
+  color: var(--content-primary);
+}
+
+h1 {
+  width: 30.2rem;
+  height: fit-content;
+
+  font: 800 4rem var(--ff-sora);
+  letter-spacing: -2px;
+}
+
+h2 {
+  font: 700 2rem var(--ff-roboto-flex);
+}
+
+@media (width >= 1080px) {
+  :root {
+    --pd-x: 10rem;
+    --pd-y: 7.6rem 15.3rem;
+  }
+
+  .container {
+    --max-width: 1080px;
+  }
+
+  h1 {
+    width: 50.8rem;
+    font-size: 7.2rem;
+  }
+}

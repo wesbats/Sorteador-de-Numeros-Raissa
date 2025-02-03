@@ -1,0 +1,208 @@
+/**
+ * Estilização dos Título: Online - gratuito
+ * -----------------------------------------
+ * Define o estilo dos pequeno título acima do h1 do header do main.
+ */
+.small-tt {
+  position: relative;
+  font: 700 1.6rem var(--ff-roboto-mono);
+
+  &::after {
+    content: attr(aria-label);
+    background: var(--gradient-content);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    z-index: 1;
+    inset: 0;
+  }
+}
+
+/**
+ * Estilização dos Botões
+ * -----------------------
+ * Define o estilo dos botões "Sortear" e "Sortear novamente", garantindo uma aparência consistente.
+ * A estrutura do hover cria um efeito de borda dinâmica com transição de cores.
+ */
+.button {
+  position: relative;
+  justify-content: center;
+
+  gap: 1rem;
+  padding: 1.6rem 0;
+  margin-inline: auto;
+
+  font: 700 1.6rem var(--ff-roboto-flex);
+
+  background-color: var(--background-tertiary);
+  color: var(--content-primary);
+
+  border-radius: 0.8rem;
+
+  &:hover {
+    background: var(--gradient-border);
+
+    cursor: pointer;
+
+    & span,
+    & img {
+      z-index: 1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0.2rem;
+
+      border-radius: inherit;
+      background-color: var(--background-secondary);
+    }
+  }
+}
+
+/**
+ * Troca de Estado do Botão de "Não repetir número"
+ * -------------------------------------------------
+ * Faz a troca do estado "default" para "active" quanto o input está como "checked".
+ */
+.button-repeat-container {
+  column-gap: 0.8rem;
+
+  .toggle-button {
+    position: relative;
+
+    width: 3rem;
+    height: 2rem;
+
+    background: url("../assets/state=default.svg") 100% / cover;
+
+    & input {
+      position: absolute;
+      inset: 0;
+      all: unset;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .toggle-button:has(:checked) {
+    background-image: url("../assets/state=active.svg");
+  }
+}
+
+/**
+ * Estilização dos Inputs
+ * -----------------------
+ * Define o estilo dos inputs, seguindo uma abordagem semelhante à dos botões.
+ * Inclui efeitos visuais para os estados de hover e focus.
+ */
+.inputs-container {
+  column-gap: 1.2rem;
+
+  & .input-wrapper {
+    flex-direction: column;
+
+    row-gap: 0.8rem;
+
+    & label {
+      font: 700 1.6rem var(--ff-roboto-flex);
+    }
+
+    & div {
+      position: relative;
+
+      width: 8.6rem;
+      height: 5.6rem;
+
+      background: var(--gradient-border);
+
+      border-radius: 0.8rem;
+
+      & input {
+        position: absolute;
+        inset: -0.1rem;
+
+        font: 700 3.2rem var(--ff-sora);
+
+        background-color: var(--background-secondary);
+        color: var(--content-primary);
+
+        border: none;
+        outline: transparent;
+        border-radius: inherit;
+      }
+
+      &:hover {
+        & input {
+          inset: 0.1rem;
+        }
+      }
+
+      &:has(:focus-within) {
+        & input {
+          inset: 0.2rem;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * =======================================================
+ * Estilização das Sessões de "Como o sorteador funciona?"
+ * =======================================================
+ */
+.how-does-it-work-container {
+  row-gap: 3.6rem;
+
+  & section header {
+    column-gap: 0.8rem;
+
+    & h3 {
+      font: 500 1.4rem var(--ff-roboto-flex);
+
+      color: var(--content-brand);
+    }
+  }
+
+  & p {
+    margin-left: 2.8rem;
+
+    font-size: 1.2rem;
+  }
+}
+
+/**
+ * Estilização dos Números Resultantes
+ * ------------------------------------
+ * Define o estilo dos números exibidos como resultado.
+ * Inicialmente estilizados para a fase inicial da animação, antes de sofrerem modificações visuais posteriores.
+ */
+.number-result-container {
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+
+  row-gap: 0.4rem;
+  margin-block: 4rem;
+
+  & li {
+    padding: 0.7rem 1.2rem;
+
+    font: 700 6.4rem var(--ff-roboto-mono);
+    list-style: none;
+
+    background-color: var(--content-brand);
+    color: var(--color-inverse);
+
+    border-radius: 2.8rem;
+  }
+}
+
+@media (width >= 1080px) {
+  .how-does-it-work-container {
+    width: 38.6rem;
+  }
+}
