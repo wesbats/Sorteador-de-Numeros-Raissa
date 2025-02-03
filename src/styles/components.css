@@ -1,3 +1,5 @@
+@import url(animations.css);
+
 /**
  * Estilização dos Título: Online - gratuito
  * -----------------------------------------
@@ -58,6 +60,19 @@
       border-radius: inherit;
       background-color: var(--background-secondary);
     }
+  }
+}
+
+/* Animações dos ícones dos botões "Sortear" e "Sortear Novamente" */
+.play-again-button {
+  & img {
+    animation: rotateIconDrawAgain 1s linear infinite;
+  }
+}
+
+.draw-button {
+  & img {
+    animation: moveArrowRight 1s backwards infinite;
   }
 }
 
@@ -198,6 +213,11 @@
     color: var(--color-inverse);
 
     border-radius: 2.8rem;
+
+    animation: numberAppear 1s ease forwards,
+      colorChange 500ms 1s linear forwards;
+    scale: 0;
+    opacity: 0;
   }
 }
 

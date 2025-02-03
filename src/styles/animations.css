@@ -1,0 +1,33 @@
+@keyframes numberAppear {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes colorChange {
+  100% {
+    background: transparent;
+    color: var(--content-brand);
+  }
+}
+
+@keyframes rotateIconDrawAgain {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveArrowRight {
+  50% {
+    transform: translateX(-6px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
