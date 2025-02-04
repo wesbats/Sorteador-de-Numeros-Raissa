@@ -22,7 +22,6 @@
   --background-secondary: #111012;
   --background-tertiary: #24222e;
   --background-brand: #c58de7;
-  --background-gray: #3d3d3d;
 
   /* Gradients */
   --gradient-border: linear-gradient(
@@ -33,7 +32,6 @@
     #d586e0 65.79%,
     #91a1fa 84.58%
   );
-  --gradient-background: linear-gradient(#d586e0 0%, #91a1fa 98.93%);
   --gradient-content: linear-gradient(45deg, #c7c9cc 70%, #3d3d3d 100%);
 
   /* FONTS */

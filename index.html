@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sorteador de Números | Numbers</title>
-    <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/favicon.svg"
+      type="image/x-icon"
+    />
+    <script type="module" src="./src/main.js" defer></script>
   </head>
   <body>
     <div class="container">
       <!-- HEADER DA APLICAÇÃO -->
       <header id="header">
-        <img src="./assets/logo.svg" alt="Logo da Numbers" />
+        <img src="./src/assets/logo.svg" alt="Logo da Numbers" />
       </header>
 
       <main class="grid items-center">
@@ -25,7 +30,7 @@
         </header>
 
         <!-- CONTAINER PARA INSERIR OS NÚMEORS E SORTEÁ-LOS -->
-        <div id="to-draw-container" class="hidden">
+        <div id="to-draw-container">
           <header class="to-draw-header">
             <h2 class="upper-text lh-150">Quero sortear:</h2>
             <p class="lh-150">
@@ -39,14 +44,15 @@
             <div class="inputs-container flex items-center">
               <!-- Input 1: Quantidade de números desejados -->
               <div class="input-wrapper flex tt-align">
-                <label for="amount-of-number" class="upper-text lh-150"
+                <label for="amount-number" class="upper-text lh-150"
                   >Números</label
                 >
                 <div>
                   <input
                     type="text"
-                    id="amount-of-number"
+                    id="amount-number"
                     class="tt-align"
+                    maxlength="3"
                     autofocus
                   />
                 </div>
@@ -56,7 +62,12 @@
               <div class="input-wrapper flex tt-align">
                 <label for="min-number" class="upper-text lh-150">De</label>
                 <div>
-                  <input type="text" id="min-number" class="tt-align" />
+                  <input
+                    type="text"
+                    id="min-number"
+                    class="tt-align"
+                    maxlength="3"
+                  />
                 </div>
               </div>
 
@@ -64,7 +75,12 @@
               <div class="input-wrapper flex tt-align">
                 <label for="max-number" class="upper-text lh-150">Até</label>
                 <div>
-                  <input type="text" id="max-number" class="tt-align" />
+                  <input
+                    type="text"
+                    id="max-number"
+                    class="tt-align"
+                    maxlength="3"
+                  />
                 </div>
               </div>
             </div>
@@ -79,14 +95,14 @@
           </form>
 
           <!-- Botão para sortear -->
-          <div class="draw-button button flex items-center">
+          <button class="draw-button button flex items-center">
             <span class="upper-text lh-150">Sortear</span>
-            <img src="./assets/arrow-right.svg" alt="" />
-          </div>
+            <img src="./src/assets/arrow-right.svg" alt="" />
+          </button>
         </div>
 
         <!-- CONTAINER PARA EXIBIR OS RESULTADOS -->
-        <div id="result-container" class="">
+        <div id="result-container" class="hidden">
           <header class="tt-align grid">
             <h2 class="upper-text lh-150">Resultado do sorteio</h2>
             <span class="upper-text">1º resultado</span>
@@ -100,10 +116,10 @@
           </ul>
 
           <!-- Botão para tentar novamente -->
-          <div class="play-again-button button flex items-center">
+          <button class="play-again-button button flex items-center">
             <span class="upper-text lh-150">Sortear novamente</span>
-            <img src="./assets/play-again.svg" alt="" />
-          </div>
+            <img src="./src/assets/play-again.svg" alt="" />
+          </button>
         </div>
 
         <!-- SESSÕES DE EXPLICAÇÃO DE COMO O SORTEADOR FUNCIONA -->
@@ -111,7 +127,7 @@
           <!-- Sessão 1 -->
           <section>
             <header class="flex items-center">
-              <img src="./assets/user.svg" alt="" />
+              <img src="./src/assets/user.svg" alt="" />
               <h3 class="lh-150">Como funciona o sorteador de números?</h3>
             </header>
 
@@ -124,7 +140,7 @@
           <!-- Sessão 2 -->
           <section>
             <header class="flex items-center">
-              <img src="./assets/user.svg" alt="" />
+              <img src="./src/assets/user.svg" alt="" />
               <h3 class="lh-150">Posso escolher o intervalo dos números?</h3>
             </header>
 

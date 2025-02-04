@@ -34,6 +34,8 @@
   gap: 1rem;
   padding: 1.6rem 0;
   margin-inline: auto;
+  width: 100%;
+  outline: transparent;
 
   font: 700 1.6rem var(--ff-roboto-flex);
 
@@ -41,8 +43,10 @@
   color: var(--content-primary);
 
   border-radius: 0.8rem;
+  border: none;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     background: var(--gradient-border);
 
     cursor: pointer;
@@ -92,10 +96,15 @@
 
     background: url("../assets/state=default.svg") 100% / cover;
 
+    &:has(:focus-within) {
+      outline: 2px solid var(--content-brand);
+      border-radius: 2.8rem;
+    }
+
     & input {
+      all: unset;
       position: absolute;
       inset: 0;
-      all: unset;
     }
 
     &:hover {
@@ -209,7 +218,7 @@
     font: 700 6.4rem var(--ff-roboto-mono);
     list-style: none;
 
-    background-color: var(--content-brand);
+    background-color: var(--background-brand);
     color: var(--color-inverse);
 
     border-radius: 2.8rem;
