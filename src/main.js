@@ -1,3 +1,3 @@
 "use strict";
 
-import drawButton from "./scripts/draw-button.js";
+import { drawButton, drawAgainButton } from "./scripts/buttons.js";
