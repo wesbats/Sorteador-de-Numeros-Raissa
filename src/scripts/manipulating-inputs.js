@@ -1,3 +1,5 @@
+import { noRepeatButton } from "./no-repeat";
+
 const allInputs = document.querySelectorAll(".input-wrapper input");
 const inputValues = {
   amountNumber: "",
@@ -47,6 +49,17 @@ function validatingInputs() {
   if (inputValues.minNumber >= inputValues.maxNumber) {
     alert(
       "O número mínimo não pode ser maior que o número máximo. Por favor, insira valores válidos."
+    );
+    return false;
+  }
+
+  // Verifica se a quantidade de números é maior que o número máximo quando a opção de "Não repetir números" estiver ativada.
+  if (
+    inputValues.amountNumber > inputValues.maxNumber &&
+    noRepeatButton.checked
+  ) {
+    alert(
+      'A quantidade de números não pode ultrapassar o valor máximo quando a opção "Não repetir números" estiver ativada. Tente novamente.'
     );
     return false;
   }
