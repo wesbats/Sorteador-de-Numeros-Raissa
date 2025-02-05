@@ -1,3 +1,3 @@
 "use strict";
 
-import draw from "./scripts/draw.js";
+import drawButton from "./scripts/draw-button.js";
