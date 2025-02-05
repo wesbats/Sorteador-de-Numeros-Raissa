@@ -1,5 +1,6 @@
 import { validatingInputs, inputValues } from "./manipulating-inputs.js";
 import { drawANumber } from "./draw.js";
+import showResults from "./show-results.js";
 
 const drawButton = document.querySelector(".draw-button");
 
@@ -18,5 +19,7 @@ export default drawButton.addEventListener("click", (event) => {
     for (let i = 1; i <= inputValues.amountNumber; i++) {
       drawANumber(inputValues.minNumber, inputValues.maxNumber);
     }
+
+    showResults();
   }
 });

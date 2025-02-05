@@ -12,8 +12,6 @@ const drawANumber = (min, max) => {
 
   // Condição para caso o usuário náo queira repetir os números.
   if (noRepeatButton.checked) noRepeatNumber();
-
-  return drawNumber;
 };
 
 export { drawANumber, containerDrawnNumbers };
