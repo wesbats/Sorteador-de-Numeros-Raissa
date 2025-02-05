@@ -1,5 +1,5 @@
-import { validatingInputs, inputValues } from "./manipulating-inputs.js";
-import { drawANumber } from "./draw.js";
+import { validatingInputs, getDrawSettings } from "./manipulating-inputs.js";
+import { drawNumbers } from "./draw.js";
 import showResults from "./show-results.js";
 
 const drawButton = document.querySelector(".draw-button");
@@ -16,9 +16,7 @@ drawButton.addEventListener("click", (event) => {
     resultContainer.classList.remove("hidden");
 
     // Chama a função para sortear os números o número de vezes solicitado pelo usuário.
-    for (let i = 1; i <= inputValues.amountNumber; i++) {
-      drawANumber(inputValues.minNumber, inputValues.maxNumber);
-    }
+    drawNumbers(getDrawSettings());
 
     // Mostra o resultado.
     showResults();

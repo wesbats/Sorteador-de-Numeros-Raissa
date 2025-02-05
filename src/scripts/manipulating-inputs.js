@@ -1,6 +1,5 @@
-import { noRepeatButton } from "./no-repeat";
-
 const allInputs = document.querySelectorAll(".input-wrapper input");
+const noRepeatButton = document.querySelector(".no-repeat-button");
 const inputValues = {
   amountNumber: "",
   minNumber: "",
@@ -16,7 +15,7 @@ allInputs.forEach((input) => {
 });
 
 // Função para validar os inputs.
-function validatingInputs() {
+export function validatingInputs() {
   inputValues.amountNumber = document
     .querySelector("#amount-number")
     .value.trim();
@@ -63,8 +62,15 @@ function validatingInputs() {
     );
     return false;
   }
-
+  console.log(inputValues);
   return true;
 }
 
-export { validatingInputs, inputValues };
+export function getDrawSettings() {
+  return {
+    amount: inputValues.amountNumber,
+    min: inputValues.minNumber,
+    max: inputValues.maxNumber,
+    noRepeat: noRepeatButton.checked,
+  };
+}
