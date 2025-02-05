@@ -48,7 +48,8 @@ main {
 
     & .how-does-it-work-container {
       grid-area: how-does-it-work;
-      margin-top: 3.8rem;
+      bottom: 20%;
+      position: absolute;
     }
 
     & #to-draw-container,
@@ -64,14 +65,14 @@ main {
     }
 
     & #to-draw-container {
-      margin: 0;
+      margin: 5.9rem 0 0;
       & .to-draw-header p {
         font-size: 1.6rem;
       }
     }
 
     & #result-container {
-      margin: 0;
+      margin: 5.9rem 0 0;
     }
   }
 }

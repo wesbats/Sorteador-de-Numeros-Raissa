@@ -213,7 +213,8 @@
   margin-block: 4rem;
 
   & li {
-    padding: 0.7rem 1.2rem;
+    width: 10rem;
+    height: 10rem;
 
     font: 700 6.4rem var(--ff-roboto-mono);
     list-style: none;
