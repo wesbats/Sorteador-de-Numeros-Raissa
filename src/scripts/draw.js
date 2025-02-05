@@ -1,9 +1,19 @@
-import { validatingInputs } from "./formatting-inputs.js";
+import { noRepeatNumber, noRepeatButton } from "./no-repeat.js";
 
-const drawButton = document.querySelector(".draw-button");
+let containerDrawnNumbers = [];
+let drawNumber = 0;
 
-export default drawButton.addEventListener("click", (event) => {
-  event.preventDefault();
+// FUNÇÃO PARA SORTEAR OS NÚMEROS
+const drawANumber = (min, max) => {
+  drawNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 
-  validatingInputs();
-});
+  // Atribui cada número sorteado ao array.
+  containerDrawnNumbers.push(drawNumber);
+
+  // Condição para caso o usuário náo queira repetir os números.
+  if (noRepeatButton.checked) noRepeatNumber();
+
+  return drawNumber;
+};
+
+export { drawANumber, containerDrawnNumbers };
