@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorteador de Números | Numbers</title>
+    <link
+      rel="shortcut icon"
+      href="/assets/favicon-CNZXa6LQ.svg"
+      type="image/x-icon"
+    />
+    <script type="module" crossorigin src="/assets/index-DUlDYwg2.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DsiDa8Ic.css">
+  </head>
+  <body>
+    <div class="container">
+      <!-- HEADER DA APLICAÇÃO -->
+      <header id="header">
+        <img src="/assets/logo-D2PoIftM.svg" alt="Logo da Numbers" />
+      </header>
+
+      <main class="grid items-center">
+        <!-- HEADER DO MAIN -->
+        <header id="main-header" class="grid items-center">
+          <span
+            class="small-tt upper-text lh-150"
+            aria-label="Online - gratuito"
+          ></span>
+          <h1 class="upper-text lh-130">Sorteador de números</h1>
+        </header>
+
+        <!-- CONTAINER PARA INSERIR OS NÚMEORS E SORTEÁ-LOS -->
+        <div id="to-draw-container">
+          <header class="to-draw-header">
+            <h2 class="upper-text lh-150">Quero sortear:</h2>
+            <p class="lh-150">
+              Defina o intervalo e a quantidade de números, clique em "Sortear"
+              e veja os resultados na tela. É rápido e fácil!
+            </p>
+          </header>
+
+          <!-- CONTAINER PARA SORTEAR -->
+          <form action="" class="drawer-container">
+            <div class="inputs-container flex items-center">
+              <!-- Input 1: Quantidade de números desejados -->
+              <div class="input-wrapper flex tt-align">
+                <label for="amount-number" class="upper-text lh-150"
+                  >Números</label
+                >
+                <div>
+                  <input
+                    type="text"
+                    id="amount-number"
+                    class="tt-align"
+                    maxlength="3"
+                    autofocus
+                  />
+                </div>
+              </div>
+
+              <!-- Input 2: Número mínimo -->
+              <div class="input-wrapper flex tt-align">
+                <label for="min-number" class="upper-text lh-150">De</label>
+                <div>
+                  <input
+                    type="text"
+                    id="min-number"
+                    class="tt-align"
+                    maxlength="3"
+                  />
+                </div>
+              </div>
+
+              <!-- Input 3: Número máximo -->
+              <div class="input-wrapper flex tt-align">
+                <label for="max-number" class="upper-text lh-150">Até</label>
+                <div>
+                  <input
+                    type="text"
+                    id="max-number"
+                    class="tt-align"
+                    maxlength="3"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Botão para decidir se deseja números repitidos ou não -->
+            <div class="button-repeat-container flex items-center">
+              <div class="toggle-button">
+                <input type="checkbox" />
+              </div>
+              <small>Não repetir número</small>
+            </div>
+          </form>
+
+          <!-- Botão para sortear -->
+          <button class="draw-button button flex items-center">
+            <span class="upper-text lh-150">Sortear</span>
+            <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M20.0001%2011.9998H4.00012'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M15.0003%2017C15.0003%2017%2020.0002%2013.3176%2020.0002%2012C20.0002%2010.6824%2015.0002%207%2015.0002%207'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="" />
+          </button>
+        </div>
+
+        <!-- CONTAINER PARA EXIBIR OS RESULTADOS -->
+        <div id="result-container" class="hidden">
+          <header class="tt-align grid">
+            <h2 class="upper-text lh-150">Resultado do sorteio</h2>
+            <span class="upper-text">1º resultado</span>
+          </header>
+
+          <!-- Container onde serão exibidos -->
+          <ul class="number-result-container grid flex items-center">
+            <li class="number-wrapper lh-150 tt-align"><span>23</span></li>
+            <li class="number-wrapper lh-150 tt-align"><span>23</span></li>
+            <li class="number-wrapper lh-150 tt-align"><span>23</span></li>
+          </ul>
+
+          <!-- Botão para tentar novamente -->
+          <button class="play-again-button button flex items-center">
+            <span class="upper-text lh-150">Sortear novamente</span>
+            <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M12%202.75C6.89136%202.75%202.75%206.89136%202.75%2012C2.75%2017.1086%206.89137%2021.25%2012%2021.25C17.1086%2021.25%2021.25%2017.1086%2021.25%2012C21.25%2011.5858%2021.5858%2011.25%2022%2011.25C22.4142%2011.25%2022.75%2011.5858%2022.75%2012C22.75%2017.937%2017.937%2022.75%2012%2022.75C6.06293%2022.75%201.25%2017.937%201.25%2012C1.25%206.06294%206.06294%201.25%2012%201.25C14.7937%201.25%2017.339%202.31639%2019.25%204.06269V2.5C19.25%202.08579%2019.5858%201.75%2020%201.75C20.4142%201.75%2020.75%202.08579%2020.75%202.5V6C20.75%206.41421%2020.4142%206.75%2020%206.75H16.5C16.0858%206.75%2015.75%206.41421%2015.75%206C15.75%205.58579%2016.0858%205.25%2016.5%205.25H18.3246C16.6699%203.69872%2014.446%202.75%2012%202.75Z'%20fill='white'/%3e%3cpath%20d='M15.9453%2012.3577C15.7686%2012.9844%2014.9333%2013.4273%2013.2629%2014.3131C11.648%2015.1693%2010.8406%2015.5975%2010.1899%2015.4254C9.9209%2015.3542%209.6758%2015.2191%209.47812%2015.0329C9%2014.5827%209%2013.7094%209%2011.9629C9%2010.2163%209%209.34307%209.47812%208.89284C9.6758%208.7067%209.9209%208.57157%2010.1899%208.50042C10.8406%208.32833%2011.648%208.75646%2013.2629%209.61272C14.9333%2010.4985%2015.7686%2010.9414%2015.9453%2011.5681C16.0182%2011.8268%2016.0182%2012.099%2015.9453%2012.3577Z'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="" />
+          </button>
+        </div>
+
+        <!-- SESSÕES DE EXPLICAÇÃO DE COMO O SORTEADOR FUNCIONA -->
+        <div class="how-does-it-work-container grid">
+          <!-- Sessão 1 -->
+          <section>
+            <header class="flex items-center">
+              <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M18.3333%206.06951C18.3333%208.27082%2016.4676%2010.0557%2014.1667%2010.0557C13.8961%2010.056%2013.6263%2010.031%2013.3606%209.98107C13.1692%209.94516%2013.0736%209.92724%2013.0068%209.93741C12.9401%209.94757%2012.8454%209.99791%2012.6562%2010.0986C12.1208%2010.3832%2011.4966%2010.4838%2010.8962%2010.3722C11.1244%2010.0915%2011.2803%209.75474%2011.349%209.39374C11.3907%209.17291%2011.2875%208.95841%2011.1328%208.80141C10.4305%208.08818%2010%207.12716%2010%206.06951C10%203.86819%2011.8657%202.08337%2014.1667%202.08337C16.4676%202.08337%2018.3333%203.86819%2018.3333%206.06951Z'%20stroke='%23C58DE7'%20stroke-width='1.5'%20stroke-linejoin='round'/%3e%3cpath%20d='M12.9102%206.25H12.9169M15.4102%206.25H15.4169'%20stroke='%23C58DE7'%20stroke-width='1.5'%20stroke-linecap='round'/%3e%3cpath%20d='M6.25166%2017.9168H3.93189C3.66248%2017.9168%203.39192%2017.8789%203.14447%2017.7725C2.33896%2017.4264%201.93028%2016.9694%201.73982%2016.6835C1.63145%2016.5209%201.64689%2016.3137%201.76446%2016.1575C2.69771%2014.9179%204.86546%2014.1693%206.25562%2014.1692C7.64578%2014.1693%209.80958%2014.9179%2010.7428%2016.1575C10.8604%2016.3137%2010.8758%2016.5209%2010.7675%2016.6835C10.577%2016.9694%2010.1683%2017.4264%209.36283%2017.7725C9.11533%2017.8789%208.84483%2017.9168%208.57541%2017.9168H6.25166Z'%20stroke='%23C58DE7'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M8.57118%209.8241C8.57118%2011.1002%207.53442%2012.1347%206.25555%2012.1347C4.97667%2012.1347%203.93994%2011.1002%203.93994%209.8241C3.93994%208.54802%204.97667%207.51355%206.25555%207.51355C7.53442%207.51355%208.57118%208.54802%208.57118%209.8241Z'%20stroke='%23C58DE7'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="" />
+              <h3 class="lh-150">Como funciona o sorteador de números?</h3>
+            </header>
+
+            <p class="lh-150">
+              O sorteador utiliza um algoritmo de geração aleatória para criar
+              números dentro do intervalo especificado pelo usuário.
+            </p>
+          </section>
+
+          <!-- Sessão 2 -->
+          <section>
+            <header class="flex items-center">
+              <img src="data:image/svg+xml,%3csvg%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M18.3333%206.06951C18.3333%208.27082%2016.4676%2010.0557%2014.1667%2010.0557C13.8961%2010.056%2013.6263%2010.031%2013.3606%209.98107C13.1692%209.94516%2013.0736%209.92724%2013.0068%209.93741C12.9401%209.94757%2012.8454%209.99791%2012.6562%2010.0986C12.1208%2010.3832%2011.4966%2010.4838%2010.8962%2010.3722C11.1244%2010.0915%2011.2803%209.75474%2011.349%209.39374C11.3907%209.17291%2011.2875%208.95841%2011.1328%208.80141C10.4305%208.08818%2010%207.12716%2010%206.06951C10%203.86819%2011.8657%202.08337%2014.1667%202.08337C16.4676%202.08337%2018.3333%203.86819%2018.3333%206.06951Z'%20stroke='%23C58DE7'%20stroke-width='1.5'%20stroke-linejoin='round'/%3e%3cpath%20d='M12.9102%206.25H12.9169M15.4102%206.25H15.4169'%20stroke='%23C58DE7'%20stroke-width='1.5'%20stroke-linecap='round'/%3e%3cpath%20d='M6.25166%2017.9168H3.93189C3.66248%2017.9168%203.39192%2017.8789%203.14447%2017.7725C2.33896%2017.4264%201.93028%2016.9694%201.73982%2016.6835C1.63145%2016.5209%201.64689%2016.3137%201.76446%2016.1575C2.69771%2014.9179%204.86546%2014.1693%206.25562%2014.1692C7.64578%2014.1693%209.80958%2014.9179%2010.7428%2016.1575C10.8604%2016.3137%2010.8758%2016.5209%2010.7675%2016.6835C10.577%2016.9694%2010.1683%2017.4264%209.36283%2017.7725C9.11533%2017.8789%208.84483%2017.9168%208.57541%2017.9168H6.25166Z'%20stroke='%23C58DE7'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M8.57118%209.8241C8.57118%2011.1002%207.53442%2012.1347%206.25555%2012.1347C4.97667%2012.1347%203.93994%2011.1002%203.93994%209.8241C3.93994%208.54802%204.97667%207.51355%206.25555%207.51355C7.53442%207.51355%208.57118%208.54802%208.57118%209.8241Z'%20stroke='%23C58DE7'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="" />
+              <h3 class="lh-150">Posso escolher o intervalo dos números?</h3>
+            </header>
+
+            <p class="lh-150">
+              Sim, você pode definir os valores mínimo e máximo para o intervalo
+              dos números sorteados.
+            </p>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
